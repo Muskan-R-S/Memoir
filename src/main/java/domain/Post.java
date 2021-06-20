@@ -19,6 +19,19 @@ public class Post {
     private Data createdDate;
     private Collection<Comment> comments;
 
+
+    public Post() {
+    }
+
+    public Post(Long id, String title, String content, User user, Data createdDate, Collection<Comment> comments) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.user = user;
+        this.createdDate = createdDate;
+        this.comments = comments;
+    }
+
     public Long getId() {
         return id;
     }

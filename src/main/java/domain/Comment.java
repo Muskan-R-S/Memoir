@@ -3,7 +3,6 @@ package domain;
 import javax.persistence.*;
 import javax.xml.crypto.Data;
 
-
 @Entity
 public class Comment {
 
@@ -14,6 +13,17 @@ public class Comment {
     private User user;
     private String comment;
     private Post post;
+
+    public Comment() {
+    }
+
+    public Comment(Long id, User user, String comment, Post post, Data createdDate) {
+        this.id = id;
+        this.user = user;
+        this.comment = comment;
+        this.post = post;
+        this.createdDate = createdDate;
+    }
 
     @Temporal(TemporalType.DATE)
     private Data createdDate;

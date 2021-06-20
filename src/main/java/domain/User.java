@@ -20,6 +20,18 @@ public class User {
     private String password;
     private Collection<Post> posts;
 
+    public User() {
+    }
+
+    public User(Long id, String name, String lastName, String email, String userName, String password, Collection<Post> posts) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.userName = userName;
+        this.password = password;
+        this.posts = posts;
+    }
 
     public Long getId() {
         return id;
