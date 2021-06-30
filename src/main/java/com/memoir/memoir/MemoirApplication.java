@@ -10,4 +10,6 @@ public class MemoirApplication {
 		SpringApplication.run(MemoirApplication.class, args);
 	}
 
+
+
 }

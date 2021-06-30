@@ -1,4 +1,4 @@
-package domain;
+package com.memoir.memoir.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,19 +18,28 @@ public class User {
     private String email;
     private String userName;
     private String password;
-    private Collection<Post> posts;
+    /*private Collection<Post> posts;*/
+
+    public boolean isEmpty(){
+
+        if(this.userName == null || this.email == null || this.password == null) {
+            return true;
+        }
+
+        return false;
+    }
 
     public User() {
     }
 
-    public User(Long id, String name, String lastName, String email, String userName, String password, Collection<Post> posts) {
-        this.id = id;
+    public User( String name, String lastName, String email, String userName, String password /*Collection<Post> posts*/) {
+        this.id= id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.userName = userName;
         this.password = password;
-        this.posts = posts;
+        /*this.posts = posts;*/
     }
 
     public Long getId() {
@@ -81,11 +90,11 @@ public class User {
         this.password = password;
     }
 
-    public Collection<Post> getPosts() {
-        return posts;
-    }
+//    public Collection<Post> getPosts() {
+//        return posts;
+//    }
 
-    public void setPosts(Collection<Post> posts) {
-        this.posts = posts;
-    }
+//    public void setPosts(Collection<Post> posts) {
+//        this.posts = posts;
+//    }
 }
