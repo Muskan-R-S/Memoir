@@ -1,10 +1,8 @@
 package com.memoir.memoir.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -18,7 +16,9 @@ public class User {
     private String email;
     private String userName;
     private String password;
-    /*private Collection<Post> posts;*/
+
+    @OneToMany
+    private Set<Post> posts;
 
     public boolean isEmpty(){
 
@@ -32,14 +32,13 @@ public class User {
     public User() {
     }
 
-    public User( String name, String lastName, String email, String userName, String password /*Collection<Post> posts*/) {
+    public User( String name, String lastName, String email, String userName, String password) {
         this.id= id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.userName = userName;
         this.password = password;
-        /*this.posts = posts;*/
     }
 
     public Long getId() {
@@ -90,11 +89,11 @@ public class User {
         this.password = password;
     }
 
-//    public Collection<Post> getPosts() {
-//        return posts;
-//    }
+    public Collection<Post> getPosts() {
+        return posts;
+    }
 
-//    public void setPosts(Collection<Post> posts) {
-//        this.posts = posts;
-//    }
+    public void setPosts(Set<Post> posts) {
+        this.posts = posts;
+    }
 }

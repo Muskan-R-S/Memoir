@@ -4,13 +4,14 @@ body {
   background-color: #FF8882;
   height: 100vh;
 }
-h3{
-  padding: 20px;
-}
 
 .text{
   color: black;
 
+}
+.heading{
+    font-size: 100px;
+    font-family: 'Caveat', cursive;
 }
 .submit-btn{
   padding-top: 10px;
@@ -18,7 +19,7 @@ h3{
 }
 
 #login .container #login-row #login-column #login-box {
-  margin-top: 120px;
+  margin-top: 40px;
   max-width: 600px;
   height: 320px;
   border: 1px solid #9C9C9C;
