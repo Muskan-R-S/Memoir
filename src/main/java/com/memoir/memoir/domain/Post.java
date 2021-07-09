@@ -13,6 +13,7 @@ public class Post {
 
     private String title;
     private String content;
+    private Long uID;
 
     @OneToOne
     private User user;
@@ -27,12 +28,10 @@ public class Post {
     public Post() {
     }
 
-    public Post( String title, String content, User user/*, Data createdDate*/) {
-        this.id = id;
+    public Post( String title, String content, Long uID) {
         this.title = title;
         this.content = content;
-        this.user = user;
-//        this.createdDate = createdDate;
+        this.uID = uID;
 
     }
 
@@ -83,5 +82,13 @@ public class Post {
 
     public void setComments(Set<Comment> comments) {
         this.comments = comments;
+    }
+
+    public Long getuID() {
+        return uID;
+    }
+
+    public void setuID(Long uID) {
+        this.uID = uID;
     }
 }

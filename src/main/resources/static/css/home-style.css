@@ -1,0 +1,63 @@
+
+body {
+  margin: auto;
+  padding: 0;
+  background-color: #FF8882;
+  height: 100vh;
+  max-width: 800px;
+  text-align: center;
+
+}
+
+.title{
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-bottom: 5%;
+  margin-right: 10%;
+  text-align: center;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.input{
+  width: 98%;
+  height: 10%;
+}
+
+form{
+  margin: auto;
+  width: 800px;
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  text-align: center;
+
+
+}
+
+.button{
+  margin: 5%;
+}
+
+.create-post{
+  border: 1px solid #9C9C9C;
+  background-color: white;
+}
+
+.blogs{
+  margin:10;
+  background-color: white;
+  border: 1px solid #9C9C9C;
+  width: 800px;
+}
+
+textarea{
+  max-width: 250px;
+}
+
+.blog-card{
+  border: 1px solid #9C9C9C;
+
+}

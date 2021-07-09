@@ -30,8 +30,17 @@ public class UserController {
 
         User user;
         user = (User) urepo.findByuserName(userName);
-        System.out.println("HELLOOO ----------------------------------------------------------------"+user.getPassword()+" ");
-        if ( user != null && !(user.getPassword().toString() == password.toString()) ) {
+
+        System.out.println("User:" +userName );
+        System.out.println("User found:" +user.getUserName());
+
+        String upass;
+        upass = user.getPassword();
+
+        System.out.println("Password= " +upass);
+        System.out.println("Password entered= " +password);
+
+        if ( user != null && upass.equals(password) ) {
             return "home";
         }
         return "login";
@@ -43,15 +52,20 @@ public class UserController {
         User user;
         user = (User) urepo.findByEmail(email);
 
+        System.out.println("Fname"+ firstName );
+
+        if( (firstName.isEmpty()) || (lastName.isEmpty()) || (email.isEmpty()) || ( username.isEmpty()) || (password.isEmpty()) ) {
+            System.out.println("ENTER ALL FIELDS");
+            return "registeration";
+        }
         if( user == null) {
             user = new User( firstName, lastName, email, username, password);
             urepo.save(user);
             return "login";
         }
-        return "login";
+        return "registeration";
 
     }
-
 
 
 }

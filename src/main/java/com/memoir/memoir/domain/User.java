@@ -96,4 +96,11 @@ public class User {
     public void setPosts(Set<Post> posts) {
         this.posts = posts;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "password='" + password + '\'' +
+                '}';
+    }
 }

@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Memoir</title>
-</head>
-<body>
+<html lang="en" dir="ltr">
 
-<h1> HOME</h1>
+<head>
+    <meta charset="utf-8">
+    <title>Memoir</title>
+    <link rel="stylesheet" href="css/home-style.css">
+</head>
+
+<body>
+<div class="title">
+    <h1>Memoir</h1>
+</div>
+<div>
+    <div class="form">
+        <a href="home/create.html">Create Post</a>
+        <form id="post-form" class="form create-post" action="/publish" method="post">
+            <h2 class="text-center">Create Post</h2>
+            <div class="form-element">
+                <input type="text" placeholder="Title" name="title" value="">
+                <br>
+                <textarea name="content" rows="8" cols="80"></textarea>
+            </div>
+            <div class="form-element">
+                <input type="text" placeholder="Enter Username" name="title" value="">
+            </div>
+
+            <div class="text-center form-element">
+                <button class="button" type="button" name="button">Post</button>
+            </div>
+        </form>
+
+    </div>
+
+
+    <div class="blogs">
+        <h2 class="text-center">BLOGS</h2>
+        <div class="blog-card">
+            <h4>Title</h4>
+            <p>This is content</p>
+        </div>
+    </div>
+
+
+</div>
 
 </body>
+
 </html>
