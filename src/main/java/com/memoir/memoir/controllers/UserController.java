@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.memoir.memoir.repositories.UserRepository;
+import org.springframework.web.servlet.view.RedirectView;
 
 
 @Controller
@@ -17,6 +18,7 @@ public class UserController {
 
     @RequestMapping("/login")
     public String loginForm() {
+
         return "login" ;
     }
 
@@ -24,6 +26,7 @@ public class UserController {
     public String registerationForm(){
         return "registeration";
     }
+
 
     @PostMapping(path = "/login")
     public String loginUser(@RequestParam("username") String userName,@RequestParam("password") String password) {
@@ -41,7 +44,7 @@ public class UserController {
         System.out.println("Password entered= " +password);
 
         if ( user != null && upass.equals(password) ) {
-            return "home";
+            return "redirect:/home";
         }
         return "login";
     }
@@ -61,9 +64,10 @@ public class UserController {
         if( user == null) {
             user = new User( firstName, lastName, email, username, password);
             urepo.save(user);
-            return "login";
+            return "redirect:/login";
         }
         return "registeration";
+
 
     }
 

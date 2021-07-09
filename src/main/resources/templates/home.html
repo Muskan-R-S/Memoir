@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" xmlns:th=“http://www.thymeleaf.org”>
 
 <head>
     <meta charset="utf-8">
@@ -22,24 +22,26 @@
                 <textarea name="content" rows="8" cols="80"></textarea>
             </div>
             <div class="form-element">
-                <input type="text" placeholder="Enter Username" name="title" value="">
+                <input type="text" placeholder="Enter Username" name="username" value="">
             </div>
 
             <div class="text-center form-element">
-                <button class="button" type="button" name="button">Post</button>
+                <button class="button" type="submit" name="button">Post</button>
             </div>
         </form>
 
     </div>
 
 
-    <div class="blogs">
-        <h2 class="text-center">BLOGS</h2>
-        <div class="blog-card">
-            <h4>Title</h4>
-            <p>This is content</p>
+    <h2 class="text-center">BLOGS</h2>
+    <div th:each="post: ${posts}" class="blogs">
+        <div  class="blog-card">
+            <h4 th:text="${post.title}"/>
+            <p th:text="${post.content}"/>
         </div>
     </div>
+
+
 
 
 </div>

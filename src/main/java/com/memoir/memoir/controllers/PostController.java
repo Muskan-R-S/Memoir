@@ -19,24 +19,20 @@ public class PostController {
     UserRepository urepo;
 
 
-    @RequestMapping("/publish")
-    public String postForm(){
-        return "home";
-    }
-
 
     @PostMapping(path = "/publish")
-    public String CreateBlog(@RequestParam("Title") String title, @RequestParam("content") String content, @RequestParam("username") String username) {
+    public String CreateBlog(@RequestParam("title") String title, @RequestParam("content") String content, @RequestParam("username") String username) {
 
+        System.out.println("Enter publish");
         Post post;
         User user;
         Long uID;
         user = urepo.findByuserName(username);
         uID = user.getId();
+        System.out.println("Title:"+title +"content:-" +content+ "username:-"+username);
         post = new Post(title, content, uID );
         postrepo.save(post);
-        return "home";
-
+        return "redirect:/home";
 
     }
 
