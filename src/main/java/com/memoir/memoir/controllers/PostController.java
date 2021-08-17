@@ -6,9 +6,9 @@ import com.memoir.memoir.repositories.PostRepository;
 import com.memoir.memoir.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @Controller
 public class PostController {
@@ -18,6 +18,19 @@ public class PostController {
     @Autowired
     UserRepository urepo;
 
+
+    @GetMapping("/post/{id}")
+    @ResponseBody
+    public String getPostById(@PathVariable String id) {
+        return "ID: " + id;
+    }
+
+    @PostMapping("/post/{id}")
+    public String postPage(Model model,@PathVariable String id){
+        Post post = postrepo.findById(id);
+        model.addAttribute("post", post);
+        return "redirect:/post";
+    }
 
 
     @PostMapping(path = "/publish")
@@ -33,8 +46,9 @@ public class PostController {
         post = new Post(title, content, uID );
         postrepo.save(post);
         return "redirect:/home";
-
     }
+
+
 
 
 }

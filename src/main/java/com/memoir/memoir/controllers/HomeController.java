@@ -21,11 +21,6 @@ public class HomeController {
         List<Post> posts = (List<Post>) postRepo.findAll();
         model.addAttribute("posts", posts);
         return "home";
-
     }
-
-
-
-
 
 }

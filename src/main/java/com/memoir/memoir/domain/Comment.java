@@ -1,6 +1,7 @@
 package com.memoir.memoir.domain;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Comment {
@@ -13,18 +14,20 @@ public class Comment {
     private User user;
     private String comment;
 
+    private Date dateCreated;
+
     @ManyToOne
     private Post post;
 
     public Comment() {
     }
 
-    public Comment(Long id, User user, String comment, Post post /*Data createdDate*/) {
+    public Comment(Long id, User user, String comment, Post post) {
         this.id = id;
         this.user = user;
         this.comment = comment;
         this.post = post;
-//        this.createdDate = createdDate;
+        this.dateCreated = dateCreated;
     }
 
 
@@ -60,7 +63,19 @@ public class Comment {
         this.post = post;
     }
 
-//    public Data getCreatedDate() {
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public Date getDate() {
+        return dateCreated;
+    }
+
+    //    public Data getCreatedDate() {
 //        return createdDate;
 //    }
 //

@@ -2,6 +2,7 @@ package com.memoir.memoir.domain;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -17,17 +18,12 @@ public class User {
     private String userName;
     private String password;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    public static Date dateCreated;
+
     @OneToMany
     private Set<Post> posts;
 
-    public boolean isEmpty(){
-
-        if(this.userName == null || this.email == null || this.password == null) {
-            return true;
-        }
-
-        return false;
-    }
 
     public User() {
     }
@@ -39,6 +35,11 @@ public class User {
         this.email = email;
         this.userName = userName;
         this.password = password;
+        this.dateCreated = dateCreated;
+    }
+
+    public static Date getDate() {
+        return dateCreated;
     }
 
     public Long getId() {
@@ -97,10 +98,28 @@ public class User {
         this.posts = posts;
     }
 
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+
     @Override
     public String toString() {
         return "User{" +
                 "password='" + password + '\'' +
                 '}';
+    }
+
+    public boolean isEmpty(){
+
+        if(this.userName == null || this.email == null || this.password == null) {
+            return true;
+        }
+
+        return false;
     }
 }

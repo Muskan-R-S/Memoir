@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.memoir.memoir.repositories.UserRepository;
 import org.springframework.web.servlet.view.RedirectView;
 
-
 @Controller
 public class UserController {
 
@@ -62,6 +61,7 @@ public class UserController {
             return "registeration";
         }
         if( user == null) {
+
             user = new User( firstName, lastName, email, username, password);
             urepo.save(user);
             return "redirect:/login";

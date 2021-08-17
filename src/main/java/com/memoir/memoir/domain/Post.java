@@ -1,29 +1,25 @@
 package com.memoir.memoir.domain;
-
 import javax.persistence.*;
-import javax.xml.crypto.Data;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
 public class Post {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String title;
     private String content;
     private Long uID;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateCreated;
+
     @OneToOne
     private User user;
 
-
-//    private Data createdDate;
-
     @OneToMany
     private Set<Comment> comments;
-
 
     public Post() {
     }
@@ -32,7 +28,6 @@ public class Post {
         this.title = title;
         this.content = content;
         this.uID = uID;
-
     }
 
     public Long getId() {
@@ -75,6 +70,18 @@ public class Post {
 //        this.createdDate = createdDate;
 //    }
 
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public Date getDate() {
+        return dateCreated;
+    }
 
     public Set<Comment> getComments() {
         return comments;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th=“http://www.thymeleaf.org”>
+
+<head>
+    <meta charset="utf-8">
+    <title>Memoir</title>
+    <link rel="stylesheet" href="css/post-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="title">
+    <h1>Memoir</h1>
+</div>
+<div>
+    <h2 class="text-center">BLOGS</h2>
+    <div th:each="id: ${id}" class="blogs">
+        <div class="blog-card">
+            <h4 th:text="${id.title}" />
+            <p th:text="${id.content}" />
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-child comment">
+                <label for="comment">Comment here</label>
+                <input type="text" id="comment" name="comment" value="">
+                <button type="submit" name="button">enter</button>
+            </div>
+
+            <div class="flex-child like">
+                <button type="submit" name="like-btn">Like</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

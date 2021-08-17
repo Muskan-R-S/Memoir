@@ -7,6 +7,7 @@ body {
   max-width: 800px;
   text-align: center;
 }
+
 h1 {
   padding-bottom: 2px;
   font-size: 100px;
@@ -14,7 +15,6 @@ h1 {
 }
 
 .title{
-  color: white;
   margin-top: 5%;
   margin-left: 10%;
   margin-bottom: 5%;
@@ -38,6 +38,8 @@ form{
   justify-content:center;
   flex-direction: column;
   text-align: center;
+
+
 }
 
 .button{
@@ -60,16 +62,7 @@ textarea{
   max-width: 250px;
 }
 
-a{
-  text-decoration: none;
-}
-.ex-blog{
-  color: black;
-}
-.ex-blog:link{
-  text-decoration:none;
-}
+.blog-card{
+  border: 1px solid #9C9C9C;
 
-.ex-blog:hover{
-  background: #D8E3E7;
 }

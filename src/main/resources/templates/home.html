@@ -11,9 +11,11 @@
 <div class="title">
     <h1>Memoir</h1>
 </div>
+<div class="logout">
+     <a href="/login">Logout</a>
+</div>
 <div>
     <div class="form">
-        <a href="home/create.html">Create Post</a>
         <form id="post-form" class="form create-post" action="/publish" method="post">
             <h2 class="text-center">Create Post</h2>
             <div class="form-element">
@@ -34,15 +36,14 @@
 
 
     <h2 class="text-center">BLOGS</h2>
-    <div th:each="post: ${posts}" class="blogs">
-        <div  class="blog-card">
-            <h4 th:text="${post.title}"/>
-            <p th:text="${post.content}"/>
-        </div>
+    <div th:each="post: ${posts}" class="ex-blog blogs">
+        <a th:href="@{/post/{id}(id=${post.id})}" >
+            <div class="blog-card">
+                <h4 th:text="${post.title}"/>
+                <p th:text="${post.content}" />
+            </div>
+        </a>
     </div>
-
-
-
 
 </div>
 
