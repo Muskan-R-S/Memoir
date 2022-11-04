@@ -1,3 +1,3 @@
 # Memoir
-Simple blog web app
+Blogging web application 
 
